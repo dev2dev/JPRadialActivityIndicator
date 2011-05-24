@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0617D449138C19F9006595CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0617D448138C19F9006595CA /* UIKit.framework */; };
+		0617D44B138C19F9006595CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0617D44A138C19F9006595CA /* Foundation.framework */; };
+		0617D44D138C19F9006595CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0617D44C138C19F9006595CA /* CoreGraphics.framework */; };
+		0617D453138C19F9006595CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0617D451138C19F9006595CA /* InfoPlist.strings */; };
+		0617D456138C19F9006595CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0617D455138C19F9006595CA /* main.m */; };
+		0617D459138C19F9006595CA /* ProgressViewSandboxAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0617D458138C19F9006595CA /* ProgressViewSandboxAppDelegate.m */; };
+		0617D45C138C19F9006595CA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0617D45A138C19F9006595CA /* MainWindow.xib */; };
+		0617D45F138C19F9006595CA /* ProgressViewSandboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0617D45E138C19F9006595CA /* ProgressViewSandboxViewController.m */; };
+		0617D462138C19F9006595CA /* ProgressViewSandboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0617D460138C19F9006595CA /* ProgressViewSandboxViewController.xib */; };
+		0617D46A138C1A22006595CA /* JPRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0617D469138C1A22006595CA /* JPRadialProgressView.m */; };
+		0617D46E138C20D7006595CA /* JPRadialActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0617D46D138C20D7006595CA /* JPRadialActivityIndicator.m */; };
+		06821293138C2F8100A5D6BD /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 06821291138C2F8100A5D6BD /* ActivityIndicator.m */; };
+		06821295138C331A00A5D6BD /* ActivityIndicator.opacity in Resources */ = {isa = PBXBuildFile; fileRef = 06821294138C331A00A5D6BD /* ActivityIndicator.opacity */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0617D444138C19F9006595CA /* ProgressViewSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgressViewSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0617D448138C19F9006595CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0617D44A138C19F9006595CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0617D44C138C19F9006595CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0617D450138C19F9006595CA /* ProgressViewSandbox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProgressViewSandbox-Info.plist"; sourceTree = "<group>"; };
+		0617D452138C19F9006595CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0617D454138C19F9006595CA /* ProgressViewSandbox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProgressViewSandbox-Prefix.pch"; sourceTree = "<group>"; };
+		0617D455138C19F9006595CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0617D457138C19F9006595CA /* ProgressViewSandboxAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressViewSandboxAppDelegate.h; sourceTree = "<group>"; };
+		0617D458138C19F9006595CA /* ProgressViewSandboxAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressViewSandboxAppDelegate.m; sourceTree = "<group>"; };
+		0617D45B138C19F9006595CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		0617D45D138C19F9006595CA /* ProgressViewSandboxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressViewSandboxViewController.h; sourceTree = "<group>"; };
+		0617D45E138C19F9006595CA /* ProgressViewSandboxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressViewSandboxViewController.m; sourceTree = "<group>"; };
+		0617D461138C19F9006595CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ProgressViewSandboxViewController.xib; sourceTree = "<group>"; };
+		0617D468138C1A22006595CA /* JPRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPRadialProgressView.h; sourceTree = "<group>"; };
+		0617D469138C1A22006595CA /* JPRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPRadialProgressView.m; sourceTree = "<group>"; };
+		0617D46C138C20D7006595CA /* JPRadialActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPRadialActivityIndicator.h; sourceTree = "<group>"; };
+		0617D46D138C20D7006595CA /* JPRadialActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPRadialActivityIndicator.m; sourceTree = "<group>"; };
+		06821291138C2F8100A5D6BD /* ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
+		06821292138C2F8100A5D6BD /* ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicator.h; sourceTree = "<group>"; };
+		06821294138C331A00A5D6BD /* ActivityIndicator.opacity */ = {isa = PBXFileReference; lastKnownFileType = file; path = ActivityIndicator.opacity; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0617D441138C19F9006595CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0617D449138C19F9006595CA /* UIKit.framework in Frameworks */,
+				0617D44B138C19F9006595CA /* Foundation.framework in Frameworks */,
+				0617D44D138C19F9006595CA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0617D439138C19F9006595CA = {
+			isa = PBXGroup;
+			children = (
+				0617D44E138C19F9006595CA /* ProgressViewSandbox */,
+				0617D447138C19F9006595CA /* Frameworks */,
+				0617D445138C19F9006595CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0617D445138C19F9006595CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0617D444138C19F9006595CA /* ProgressViewSandbox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0617D447138C19F9006595CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0617D448138C19F9006595CA /* UIKit.framework */,
+				0617D44A138C19F9006595CA /* Foundation.framework */,
+				0617D44C138C19F9006595CA /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0617D44E138C19F9006595CA /* ProgressViewSandbox */ = {
+			isa = PBXGroup;
+			children = (
+				0617D457138C19F9006595CA /* ProgressViewSandboxAppDelegate.h */,
+				0617D458138C19F9006595CA /* ProgressViewSandboxAppDelegate.m */,
+				0617D45A138C19F9006595CA /* MainWindow.xib */,
+				0617D45D138C19F9006595CA /* ProgressViewSandboxViewController.h */,
+				0617D45E138C19F9006595CA /* ProgressViewSandboxViewController.m */,
+				0617D460138C19F9006595CA /* ProgressViewSandboxViewController.xib */,
+				0617D46F138C20E2006595CA /* ActivityIndicator */,
+				0617D46B138C1A28006595CA /* ProgressView */,
+				0617D44F138C19F9006595CA /* Supporting Files */,
+			);
+			path = ProgressViewSandbox;
+			sourceTree = "<group>";
+		};
+		0617D44F138C19F9006595CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0617D450138C19F9006595CA /* ProgressViewSandbox-Info.plist */,
+				0617D451138C19F9006595CA /* InfoPlist.strings */,
+				0617D454138C19F9006595CA /* ProgressViewSandbox-Prefix.pch */,
+				0617D455138C19F9006595CA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0617D46B138C1A28006595CA /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				0617D468138C1A22006595CA /* JPRadialProgressView.h */,
+				0617D469138C1A22006595CA /* JPRadialProgressView.m */,
+			);
+			name = ProgressView;
+			sourceTree = "<group>";
+		};
+		0617D46F138C20E2006595CA /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				0617D46C138C20D7006595CA /* JPRadialActivityIndicator.h */,
+				0617D46D138C20D7006595CA /* JPRadialActivityIndicator.m */,
+				06821292138C2F8100A5D6BD /* ActivityIndicator.h */,
+				06821291138C2F8100A5D6BD /* ActivityIndicator.m */,
+				06821294138C331A00A5D6BD /* ActivityIndicator.opacity */,
+			);
+			name = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0617D443138C19F9006595CA /* ProgressViewSandbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0617D465138C19F9006595CA /* Build configuration list for PBXNativeTarget "ProgressViewSandbox" */;
+			buildPhases = (
+				0617D440138C19F9006595CA /* Sources */,
+				0617D441138C19F9006595CA /* Frameworks */,
+				0617D442138C19F9006595CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProgressViewSandbox;
+			productName = ProgressViewSandbox;
+			productReference = 0617D444138C19F9006595CA /* ProgressViewSandbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0617D43B138C19F9006595CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "IdiogenicOsmoles & PasquaLabs";
+			};
+			buildConfigurationList = 0617D43E138C19F9006595CA /* Build configuration list for PBXProject "ProgressViewSandbox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0617D439138C19F9006595CA;
+			productRefGroup = 0617D445138C19F9006595CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0617D443138C19F9006595CA /* ProgressViewSandbox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0617D442138C19F9006595CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0617D453138C19F9006595CA /* InfoPlist.strings in Resources */,
+				0617D45C138C19F9006595CA /* MainWindow.xib in Resources */,
+				0617D462138C19F9006595CA /* ProgressViewSandboxViewController.xib in Resources */,
+				06821295138C331A00A5D6BD /* ActivityIndicator.opacity in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0617D440138C19F9006595CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0617D456138C19F9006595CA /* main.m in Sources */,
+				0617D459138C19F9006595CA /* ProgressViewSandboxAppDelegate.m in Sources */,
+				0617D45F138C19F9006595CA /* ProgressViewSandboxViewController.m in Sources */,
+				0617D46A138C1A22006595CA /* JPRadialProgressView.m in Sources */,
+				0617D46E138C20D7006595CA /* JPRadialActivityIndicator.m in Sources */,
+				06821293138C2F8100A5D6BD /* ActivityIndicator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0617D451138C19F9006595CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0617D452138C19F9006595CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0617D45A138C19F9006595CA /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0617D45B138C19F9006595CA /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		0617D460138C19F9006595CA /* ProgressViewSandboxViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0617D461138C19F9006595CA /* en */,
+			);
+			name = ProgressViewSandboxViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0617D463138C19F9006595CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		0617D464138C19F9006595CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		0617D466138C19F9006595CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joe Pasqualetti ||| (UY543ZH9HF)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProgressViewSandbox/ProgressViewSandbox-Prefix.pch";
+				INFOPLIST_FILE = "ProgressViewSandbox/ProgressViewSandbox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "88DDB53F-1F9D-4D47-AD2C-D3B719218988";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0617D467138C19F9006595CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joe Pasqualetti ||| (UY543ZH9HF)";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProgressViewSandbox/ProgressViewSandbox-Prefix.pch";
+				INFOPLIST_FILE = "ProgressViewSandbox/ProgressViewSandbox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "88DDB53F-1F9D-4D47-AD2C-D3B719218988";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0617D43E138C19F9006595CA /* Build configuration list for PBXProject "ProgressViewSandbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0617D463138C19F9006595CA /* Debug */,
+				0617D464138C19F9006595CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0617D465138C19F9006595CA /* Build configuration list for PBXNativeTarget "ProgressViewSandbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0617D466138C19F9006595CA /* Debug */,
+				0617D467138C19F9006595CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0617D43B138C19F9006595CA /* Project object */;
+}
