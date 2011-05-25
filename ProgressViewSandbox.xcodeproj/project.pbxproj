@@ -44,6 +44,7 @@
 		06821291138C2F8100A5D6BD /* ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
 		06821292138C2F8100A5D6BD /* ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicator.h; sourceTree = "<group>"; };
 		06821294138C331A00A5D6BD /* ActivityIndicator.opacity */ = {isa = PBXFileReference; lastKnownFileType = file; path = ActivityIndicator.opacity; sourceTree = "<group>"; };
+		06DC1A23138D6E120054E9FB /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 				0617D45D138C19F9006595CA /* ProgressViewSandboxViewController.h */,
 				0617D45E138C19F9006595CA /* ProgressViewSandboxViewController.m */,
 				0617D460138C19F9006595CA /* ProgressViewSandboxViewController.xib */,
+				06DC1A23138D6E120054E9FB /* UIColor+RandomColor.h */,
 				0617D46F138C20E2006595CA /* ActivityIndicator */,
 				0617D46B138C1A28006595CA /* ProgressView */,
 				0617D44F138C19F9006595CA /* Supporting Files */,

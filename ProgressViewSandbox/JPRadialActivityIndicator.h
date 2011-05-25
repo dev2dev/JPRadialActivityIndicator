@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ActivityIndicator.h"
 
-@interface JPRadialActivityIndicator : ActivityIndicator {
+@interface JPRadialActivityIndicator : UIView {
     UIColor *backingColor;
 	UIColor *highlightColor;
 	
@@ -17,13 +16,11 @@
 	BOOL hidesWhenStopped;
 	
 	NSTimer *_spinTimer;
-	CGFloat _angle;
 }
 
 @property (nonatomic, retain) UIColor *backingColor, *highlightColor;
 @property (nonatomic, assign) BOOL active, hidesWhenStopped;
 @property (nonatomic, retain) NSTimer *_spinTimer;
-@property (nonatomic, assign) CGFloat _angle;
 
 - (void) startAnimating;
 - (void) stopAnimating;

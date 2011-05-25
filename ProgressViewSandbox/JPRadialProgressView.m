@@ -79,6 +79,22 @@ void NLDrawPieChartProgressGraph(CGContextRef context, CGPoint center, CGFloat r
 	return progress;
 }
 
+#pragma mark Color
+
+- (void) setEmptyColor:(UIColor *)newEmptyColor {
+	[emptyColor release];
+	emptyColor = [newEmptyColor retain];
+	[self setNeedsDisplay];
+}
+
+- (void) setFillColor:(UIColor *)newFillColor {
+	[fillColor release];
+	fillColor = [newFillColor retain];
+	[self setNeedsDisplay];
+}
+
+#pragma mark Creation & Destruction
+
 - (id)initWithFrame:(CGRect) newFrame {
     
     self = [super initWithFrame:newFrame];

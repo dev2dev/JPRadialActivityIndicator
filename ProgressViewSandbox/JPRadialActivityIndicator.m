@@ -13,9 +13,9 @@
 @synthesize backingColor, highlightColor;
 @synthesize active, hidesWhenStopped;
 @synthesize _spinTimer;
-@synthesize _angle;
 
 #define DEG2RAD(x) (0.0174532925 * (x))
+//As declared in JPRadialProgressView, but restated to have less dependence on other classes
 
 #pragma mark - UI
 - (void) startAnimating {
@@ -34,11 +34,29 @@
 - (void) setActive:(BOOL) newActive {
 	active = newActive;
 	if (newActive == YES) {
-		_spinTimer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(timerIncremented:) userInfo:nil repeats:YES];
+		if (_spinTimer == nil)
+			_spinTimer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(timerIncremented:) userInfo:nil repeats:YES];
+//		else
+//			There is already a spin timer active, don't make another
 	} else {
 		[_spinTimer invalidate];
+		_spinTimer = nil;
 		self.transform = CGAffineTransformRotate(self.transform, DEG2RAD(0));
 	}
+}
+
+#pragma mark Color
+
+- (void) setBackingColor:(UIColor *)newBackingColor {
+	[backingColor release];
+	backingColor = [newBackingColor retain];
+	[self setNeedsDisplay];
+}
+
+- (void) setHighlightColor:(UIColor *)newHighlightColor {
+	[highlightColor release];
+	highlightColor = [newHighlightColor retain];
+	[self setNeedsDisplay];
 }
 
 #pragma mark initializer
@@ -47,8 +65,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backingColor = [UIColor blackColor];
-		self.highlightColor = [UIColor whiteColor];
+        self.backingColor = [UIColor greenColor];
+		self.highlightColor = [UIColor blueColor];
 		self.active = NO;
 		self.hidesWhenStopped = YES;
 		self.backgroundColor = [UIColor clearColor];
@@ -58,14 +76,13 @@
 
 
 - (void) timerIncremented:(NSTimer *) theTimer {
-	_angle += 0.5;
 	if (active == NO) {
 		[theTimer invalidate];
-		_angle = 0;
+		[_spinTimer invalidate];
+		_spinTimer = nil;
 	}
-
-	NSLog(@"%f", _angle);
-	self.transform = CGAffineTransformRotate(self.transform, DEG2RAD(7.5));
+		
+	self.transform = CGAffineTransformRotate(self.transform, DEG2RAD(7));
 }
 
 /* Courtesy of Navel Labs */
@@ -73,11 +90,11 @@
 
 - (void)drawRect:(CGRect)rect
 {
-	if (active == YES) {
-		CGRect imageBounds = (CGRect){0.0f, 0.0f, 44.0f, 44.0f}; //Magic number, should be absolved
+	if (active == YES || hidesWhenStopped == NO) {
+		CGRect imageBounds = (CGRect){0.0f, 0.0f, 44.0f, 44.0f}; //Magic number leftover from original opacity image (ActivityIndicator.opacity), should be absolved
 		CGRect bounds = [self bounds];
-		CGContextRef context = UIGraphicsGetCurrentContext();
 		
+		CGContextRef context = UIGraphicsGetCurrentContext();
 		CGFloat alignStroke;
 		CGFloat resolution;
 		CGMutablePathRef path;
@@ -98,9 +115,10 @@
 		CGContextScaleCTM(context, (bounds.size.width / imageBounds.size.width), (bounds.size.height / imageBounds.size.height));
 		
 		// Layer 1
+		
 		alignStroke = 0.0f;
 		path = CGPathCreateMutable();
-		drawRect = CGRectMake(0.5f, 0.5f, 43.0f, 43.0f);
+		drawRect = CGRectMake(0.0f, 0.0f, 44.0f, 44.0f);
 		drawRect.origin.x = (roundf(resolution * drawRect.origin.x + alignStroke) - alignStroke) / resolution;
 		drawRect.origin.y = (roundf(resolution * drawRect.origin.y + alignStroke) - alignStroke) / resolution;
 		drawRect.size.width = roundf(resolution * drawRect.size.width) / resolution;
@@ -108,7 +126,7 @@
 		CGPathAddEllipseInRect(path, NULL, drawRect);
 		color = [UIColor colorWithRed:0.0f green:0.502f blue:1.0f alpha:1.0f];
 		[color setStroke];
-		stroke = 5.0f;
+		stroke = 4.75f;
 		stroke *= resolution;
 		if (stroke < 1.0f) {
 			stroke = ceilf(stroke);
@@ -140,13 +158,16 @@
 		drawRect.size.height = roundf(resolution * drawRect.size.height) / resolution;
 		CGPathAddRect(path, NULL, drawRect);
 		colors = [NSMutableArray arrayWithCapacity:3];
-		color = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
+//		color = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
+		color = backingColor;
 		[colors addObject:(id)[color CGColor]];
 		locations[0] = 1.0f;
-		color = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
+//		color = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
+		color = backingColor;
 		[colors addObject:(id)[color CGColor]];
 		locations[1] = 0.249f;
-		color = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
+//		color = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
+		color = highlightColor;
 		[colors addObject:(id)[color CGColor]];
 		locations[2] = 0.095f;
 		gradient = CGGradientCreateWithColors(space, (CFArrayRef)colors, locations);
@@ -165,7 +186,6 @@
 		CGContextRestoreGState(context);
 		CGContextEndTransparencyLayer(context);
 		CGColorSpaceRelease(space);
-		
 	}
 }
 

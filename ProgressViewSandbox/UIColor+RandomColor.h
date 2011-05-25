@@ -1,10 +1,7 @@
 //
 //  UIColor+RandomColor.h
 //  ProgressViewSandbox
-//
-//  Created by Joe on 5/25/11.
-//  Copyright 2011 IdiogenicOsmoles & PasquaLabs. All rights reserved.
-//
+//  One of the best classes for debugging
 
 #import <UIKit/UIKit.h>
 

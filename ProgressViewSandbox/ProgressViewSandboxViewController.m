@@ -7,12 +7,14 @@
 //
 
 #import "ProgressViewSandboxViewController.h"
+#import "UIColor+RandomColor.h"
 
 @implementation ProgressViewSandboxViewController
 
 @synthesize radialProgress;
 @synthesize activityIndicator;
 @synthesize timer;
+@synthesize pinchGesture;
 
 #pragma mark - JPRadialProgressView
 
@@ -37,9 +39,36 @@
 		NSLog(@"There is already a timer running");
 }
 
+- (IBAction) randomizeColors:(id) sender {
+	self.activityIndicator.highlightColor = [UIColor randomColor];
+	self.activityIndicator.backingColor = [UIColor randomColor];
+	
+	self.radialProgress.emptyColor = [UIColor randomColor];
+	self.radialProgress.fillColor = [UIColor randomColor];
+}
+
 - (IBAction) toggleActivityIndicator:(id) sender {
-	self.activityIndicator.frame = CGRectMake(360, 80, 120, 120);
 	self.activityIndicator.active = !activityIndicator.active;
+}
+
+#pragma mark - UIPinchGestureRecognizer
+
+- (void) pinched:(UIPinchGestureRecognizer *) pinchGestureRecognizer {
+	CGFloat scale = pinchGestureRecognizer.scale;
+	CGFloat newHeight = defaultSize.height * scale;
+	CGFloat newWidth = defaultSize.width * scale;
+	CGSize newSize = CGSizeMake(newWidth, newHeight);
+	
+	CGRect radialProgressFrame = radialProgress.frame;
+	radialProgress.frame = (CGRect) {radialProgressFrame.origin, newSize};
+	[radialProgress setNeedsDisplay];
+	
+	if (![activityIndicator isAnimating]) {
+		CGRect activityIndicatorFrame = activityIndicator.frame;
+		activityIndicator.frame = (CGRect) {activityIndicatorFrame.origin, newSize};
+		[activityIndicator setNeedsDisplay];
+	} else
+		NSLog(@"If the activity indicator is active, it'll fly off screen upon resizing. This is undesirable.");
 }
 
 #pragma mark - Memory management
@@ -49,6 +78,7 @@
 	[radialProgress release], radialProgress = nil;
 	[activityIndicator release], activityIndicator = nil;
 	[timer invalidate], [timer release], timer = nil;
+	[pinchGesture release];
     [super dealloc];
 }
 
@@ -63,18 +93,26 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	self.radialProgress = [[JPRadialProgressView alloc] initWithFrame:CGRectMake(80, 80, 120, 120)];
+	
+	defaultSize = (CGSize){120, 120};
+	
+	self.radialProgress = [[JPRadialProgressView alloc] initWithFrame:(CGRect){80, 80, defaultSize}];
 	[self.view addSubview:radialProgress];
 	
-	self.activityIndicator = [[JPRadialActivityIndicator alloc] initWithFrame:CGRectMake(360, 80, 120, 120)];
+	self.activityIndicator = [[JPRadialActivityIndicator alloc] initWithFrame:(CGRect){360, 80, defaultSize}];
 	[self.view addSubview:activityIndicator];
+	activityIndicator.hidesWhenStopped = NO;
 	[activityIndicator startAnimating];
+	
+	self.pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinched:)];
+	[self.view addGestureRecognizer:pinchGesture];
 }
 
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+	[self.view removeGestureRecognizer:pinchGesture];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
