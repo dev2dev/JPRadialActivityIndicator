@@ -3,7 +3,6 @@
 //  ProgressViewSandbox
 //
 //  Created by Joe on 5/24/11.
-//  Copyright 2011 IdiogenicOsmoles & PasquaLabs. All rights reserved.
 //
 
 #import "ProgressViewSandboxAppDelegate.h"

@@ -3,7 +3,6 @@
 //  ProgressViewSandbox
 //
 //  Created by Joe on 5/24/11.
-//  Copyright 2011 IdiogenicOsmoles & PasquaLabs. All rights reserved.
 //
 
 #import "ProgressViewSandboxViewController.h"
@@ -100,6 +99,7 @@
 	[self.view addSubview:radialProgress];
 	
 	self.activityIndicator = [[JPRadialActivityIndicator alloc] initWithFrame:(CGRect){360, 80, defaultSize}];
+	self.activityIndicator.backingColor = [UIColor whiteColor];
 	[self.view addSubview:activityIndicator];
 	activityIndicator.hidesWhenStopped = NO;
 	[activityIndicator startAnimating];

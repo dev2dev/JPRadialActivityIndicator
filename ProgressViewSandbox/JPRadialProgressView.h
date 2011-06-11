@@ -3,7 +3,6 @@
 //  JPRadialProgress
 //
 //  Created by Joe on 12/1/10.
-//  Copyright 2010. All rights reserved.
 //
 
 //  The foundation of this class has been provided by Navel Labs at http://navel-labs.com. Thanks!
