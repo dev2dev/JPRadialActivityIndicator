@@ -8,6 +8,25 @@
 
 #import "JPRadialActivityIndicator.h"
 
+
+@interface UIColor (RGBBlackAndWhite)
++ (UIColor *) RGBWhiteColor;
++ (UIColor *) RGBBlackColor;
+@end
+
+
+@implementation UIColor (RGBBlackAndWhite)
++ (UIColor *) RGBWhiteColor {
+	return [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+}
+
++ (UIColor *) RGBBlackColor {
+	return [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+}
+@end
+
+
+
 @implementation JPRadialActivityIndicator
 
 @synthesize backingColor, highlightColor;
@@ -49,15 +68,30 @@
 
 - (void) setBackingColor:(UIColor *)newBackingColor {
 	[backingColor release];
-	backingColor = [newBackingColor retain];
+	
+	if (newBackingColor == [UIColor whiteColor])
+		backingColor = [[UIColor RGBWhiteColor] retain];
+	else if (newBackingColor == [UIColor blackColor])
+		backingColor = [[UIColor RGBBlackColor] retain];
+	else
+		backingColor = [newBackingColor retain];
+	
 	[self setNeedsDisplay];
 }
 
 - (void) setHighlightColor:(UIColor *)newHighlightColor {
 	[highlightColor release];
-	highlightColor = [newHighlightColor retain];
+	
+	if (newHighlightColor == [UIColor whiteColor])
+		highlightColor = [[UIColor RGBWhiteColor] retain];
+	else if (newHighlightColor == [UIColor blackColor])
+		highlightColor = [[UIColor RGBBlackColor] retain];
+	else
+		highlightColor = [newHighlightColor retain];
+	
 	[self setNeedsDisplay];
 }
+
 
 #pragma mark initializer
 
