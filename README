@@ -1,1 +1,9 @@
 Replacement radial progress view and radial activity indicator. Made with assistance from http://navel-labs.com, thanks again!
+
+To use in a project, copy JPRadialActivityIndicator.m/.h or JPRadialProgressView.m/.h, whichever you want, into your project. Initialize with a default frame or add one after and add to the view hierarchy just like any other UIView. 
+
+JPRadialActivityIndicator has two ivars related to UI which are backingColor and highlightColor.
+
+JPRadialProgressView has three relevant ivars which are emptyColor, fillColor and progress.
+
+All files Xcode uses except JPRadialProgressView.m/.h and JPRadialActivityIndicator.m/.h are solely used for the demo project and unnecessary for the use of these two classes.
